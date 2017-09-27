@@ -19,4 +19,4 @@ sudo tc class add dev ifb0 parent 1: classid 1:1 htb rate 4Mbit
 sudo tc class add dev ifb0 parent 1:1 classid 1:11 htb rate 4Mbit
 sudo tc qdisc add dev ifb0 parent 1:11 handle 10: netem delay 10ms
 #create directory for test results
-mkdir ~/Documents/Testing/Test\ 1\ results/
+mkdir ~/Documents/Testing/Test\ 4\ results/
