@@ -92,7 +92,7 @@ void quic_early_retrans_timer_handler(struct sock *sk){
 		sk_reset_timer(sk, &qp->quic_early_retrans_timer, qp->early_retransmit_time);
 		goto out;
 	}
-//TODO: goto? in 2017? WHY?
+
 	//Do stuff
 	qp->nacked_in_q = 0;
 	retransmit_nacked(sk, 0);		
@@ -176,7 +176,7 @@ static void quic_del_ack_timer(unsigned long data)
 	bh_unlock_sock(sk);
 	sock_put(sk);
 }
-/* Retransmission TimeOut and Tail Loss Probe timers (TODO: google it!). TLP set with a value depending on the 
+/* Retransmission TimeOut and Tail Loss Probe timers. TLP set with a value depending on the 
 number of transmitted but unACKed packets */
 
 //stop RTO/TLP timer and clear it
@@ -259,7 +259,7 @@ void quic_rto_tlp_timer_handler(struct sock *sk){
 		}else{
 			rto = qp->rto;
 			for(i = qp->retransmits; i>0; i--){
-				rto *= 2; //TODO: Shift here?
+				rto *= 2;
 				if(rto > QUIC_RTO_MAX)
 					break;
 			}
@@ -1315,7 +1315,7 @@ try_again:
 		if (!checksum_valid) //why? 
 			goto csum_copy_err; //go to error handling
 	}
-//TODO: what is he trying to do here? we haven't always calculated checksum_valid...
+
 	if (checksum_valid || skb_csum_unnecessary(skb)){
 
 		err = skb_copy_datagram_iovec(skb, sizeof(struct quichdr),
@@ -2475,7 +2475,7 @@ int insert_rcv_buffer(struct sock *sk, struct sk_buff *skb){
 		skb_tmp = skb_tmp->next; //go on until the tail has been reached
 	}
 	return 3; //3 = somewhere in the queue
-	//TODO: wait -> what if receiving fails? shouldn't there be a "return 0" somewhere? how is this handled by the compiler? (see following function...)
+	
 }
 /*  This function delivers packets from the receive queue to the socket, unless the next expected
     packet has not been received and we have gaps in the receive queue */
