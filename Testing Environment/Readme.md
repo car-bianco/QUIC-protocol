@@ -1,4 +1,4 @@
----HOW TO INSTALL THE KERNEL---
+# HOW TO INSTALL THE KERNEL
 
 The kernel build in the "Kernel installation files" folder is a modified version of the 14.04 Ubuntu kernel already complete with the modules needed for QUIC testing in our environment. It can be installed with the instruction:
 
@@ -6,7 +6,7 @@ sudo dpkg -i *.deb
 
 After installing the kernel on both clients and server, the machines must be rebooted. While rebooting, hold the SHIFT key to open the GRUB bootloader. Once there, open the "Advanced options" window. There, select the "quicifb2" kernel.
 
----PRELIMINARY CONFIGURATION---
+# PRELIMINARY CONFIGURATION
 
 Before testing, please make sure that the protocol number is defined in the kernel by checking whether the /usr/include/netinet/in.h file containes the lines
 
@@ -20,7 +20,7 @@ In order to capture incoming packets, Wireshark must be installed and configured
 
 shell script, which you will find in the Testing-Server folder. Then, reboot the machine and choose again the "quicifb2" kernel from GRUB.
 
----HOW TO TEST---
+# HOW TO TEST
 
 For both server and client, you will find a folder for each test (1, 2, 3, 3b, 4). These are structured as follows:
 - Test 1: Single connection setup (QUIC and TCP)
@@ -37,7 +37,7 @@ client_addr.sin_addr.s_addr= inet_addr("...");
 
 replace the placeholder addresses with the current server and client addresses in your local network. Then, save and compile again with gcc. 
 
----VIRTUAL MACHINE SETUP---
+# VIRTUAL MACHINE SETUP
 
 If you're using this environment in a VM setup, please refer to the VM_testing_instructions.pdf file.
 
