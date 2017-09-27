@@ -16,4 +16,5 @@ The folder containes the following subfolders:
 * *Kernel Installation Files*: Already compiled version of the kernel with all the modules needed for testing
 * *Testing - Client*: Client files for each test
 * *Testing - Server*: Server files for each test
+
 as well as the *install_wireshark.sh* script to install and activate Wireshark.
