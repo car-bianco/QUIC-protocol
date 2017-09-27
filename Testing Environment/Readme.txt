@@ -1,6 +1,6 @@
 ---HOW TO INSTALL THE KERNEL---
 
-The kernel build in the "Kernel" folder is a modified version of the 14.04 Ubuntu kernel already complete with the modules needed for QUIC testing in our environment. It can be installed with the instruction:
+The kernel build in the "Kernel installation files" folder is a modified version of the 14.04 Ubuntu kernel already complete with the modules needed for QUIC testing in our environment. It can be installed with the instruction:
 
 sudo dpkg -i *.deb
 
