@@ -1,6 +1,6 @@
 # QUIC kernel implementation
 
-Code from Gaurav Suman's Master's thesis *Implementation and Performance Analysis of QUIC Protocol in Wireless Networks* (2016). 
+Code from Gaurav Suman's Master's thesis *Implementation and Performance Analysis of QUIC Protocol for Wireless Networks* (2016). 
 Based on the Internet Draft draft-ietf-quic-transport-00 by IETF, only implemented for IPv4. Following files are changed/added to the Linux 3.13.11 kernel from Ubuntu 14.04 LTS:
 
 ## /net/ipv4/af_inet.c
